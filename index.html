@@ -4,89 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Mikel">
-    <meta name="description" content="IndiePlay">
+    <meta name="description" content="IndiePlay - La mejor plataforma de reseñas de videojuegos independientes">
     <title>IndiePlay | Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/indexstyle.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <header>
-        <div class="logo">🎮 IndiePlay</div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="activo">Inicio</a></li>
-                <li><a href="reseñas.html">Reseñas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+    <header class="navbar navbar-expand-lg navbar-dark" role="banner">
+        <div class="container-fluid">
+            <div class="navbar-brand" aria-label="IndiePlay - Inicio">🎮 IndiePlay</div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navbarNav" aria-label="Navegación principal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html" aria-current="page">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reseñas.html">Reseñas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="intro">
-        <h1>🎆 Bienvenido a <span>IndiePlay</span></h1>
-        <p>El espacio donde celebramos la creatividad, el arte y la pasión de los videojuegos independientes.
-            Descubre los títulos que están marcando tendencia.</p>
-    </section>
+    <main role="main">
+        <section class="intro" aria-labelledby="intro-title">
+            <h1 id="intro-title">🎆 Bienvenido a <span>IndiePlay</span></h1>
+            <p>El espacio donde celebramos la creatividad, el arte y la pasión de los videojuegos independientes.
+                Descubre los títulos que están marcando tendencia.</p>
+        </section>
 
-    <section class="juego-mes">
-        <h2>🌟 Juego del mes</h2>
-        <div class="juego-mes-contenido">
-            <img src="img/juego1.png" alt="Hollow Knight Silksong">
-            <div>
-                <h3>Hollow Knight: Silksong</h3>
-                <p>La esperada secuela del clásico de Team Cherry finalmente ha llegado.  
-                    Hornet protagoniza una aventura más rápida, desafiante y hermosa que redefine el metroidvania en 2025.</p>
-                <a href="reseñas.html?id=1" class="btn">Leer reseña</a>
+        <section class="juego-mes" aria-labelledby="juego-mes-title">
+            <h2 id="juego-mes-title">🌟 Juego del mes</h2>
+            <article class="juego-mes-contenido" role="region" aria-label="Juego del mes destacado">
+                <img src="img/juego1.png" alt="Hollow Knight Silksong - Portada del juego">
+                <div>
+                    <h3>Hollow Knight: Silksong</h3>
+                    <p>La esperada secuela del clásico de Team Cherry finalmente ha llegado.  
+                        Hornet protagoniza una aventura más rápida, desafiante y hermosa que redefine el metroidvania en 2025.</p>
+                    <a href="reseñas.html?id=1" class="btn" role="button" aria-label="Leer reseña completa de Hollow Knight Silksong">Leer reseña</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="ultimas" aria-labelledby="ultimas-title">
+            <h2 id="ultimas-title">🔥 Últimas novedades</h2>
+            <div class="novedades" role="region" aria-label="Sección de últimas novedades de juegos">
+                <article class="card" role="article" aria-labelledby="card-balatro-title">
+                    <img src="img/juego8.png" alt="Balatro - Portada del juego de póker roguelike">
+                    <h3 id="card-balatro-title">Balatro</h3>
+                    <p>El fenómeno de 2024–2025: poker, estrategia y roguelike en una mezcla tan brillante como adictiva.</p>
+                    <a href="reseñas.html?id=8" class="btn" role="button" aria-label="Ver más sobre Balatro">Ver más</a>
+                </article>
+
+                <article class="card" role="article" aria-labelledby="card-blasphemous-title">
+                    <img src="img/juego11.png" alt="Blasphemous 2 - Portada del juego de acción oscuro">
+                    <h3 id="card-blasphemous-title">Blasphemous 2</h3>
+                    <p>El estudio español The Game Kitchen regresa con una secuela intensa, mística y visualmente deslumbrante.</p>
+                    <a href="reseñas.html?id=11" class="btn" role="button" aria-label="Ver más sobre Blasphemous 2">Ver más</a>
+                </article>
+
+                <article class="card" role="article" aria-labelledby="card-hades-title">
+                    <img src="img/juego6.png" alt="Hades - Portada del juego de acción roguelike">
+                    <h3 id="card-hades-title">Hades</h3>
+                    <p>Un clásico moderno que sigue brillando por su acción impecable y narrativa envolvente.</p>
+                    <a href="reseñas.html?id=6" class="btn" role="button" aria-label="Ver más sobre Hades">Ver más</a>
+                </article>
+
+                <article class="card" role="article" aria-labelledby="card-celeste-title">
+                    <img src="img/juego5.png" alt="Celeste - Portada del juego de plataforma">
+                    <h3 id="card-celeste-title">Celeste</h3>
+                    <p>Una aventura desafiante y emocional que sigue inspirando a jugadores de todo el mundo.</p>
+                    <a href="reseñas.html?id=5" class="btn" role="button" aria-label="Ver más sobre Celeste">Ver más</a>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="ultimas">
-        <h2>🔥 Últimas novedades</h2>
-        <div class="novedades">
-            <article class="card">
-                <img src="img/juego8.png" alt="Balatro">
-                <h3>Balatro</h3>
-                <p>El fenómeno de 2024–2025: poker, estrategia y roguelike en una mezcla tan brillante como adictiva.</p>
-                <a href="reseñas.html?id=8" class="btn">Ver más</a>
-            </article>
+        <section class="explorar" aria-labelledby="explorar-title">
+            <h2 id="explorar-title">🎮 Explora el universo indie</h2>
+            <p>Desde emocionantes aventuras pixeladas hasta experiencias narrativas únicas,  
+            el mundo indie no deja de crecer. ¡Descubre tus próximos juegos favoritos!</p>
+            <a href="reseñas.html" class="btn" role="button" aria-label="Ir a la galería completa de reseñas de juegos">Explorar reseñas</a>
+        </section>
+    </main>
 
-            <article class="card">
-                <img src="img/juego11.png" alt="Blasphemous 2">
-                <h3>Blasphemous 2</h3>
-                <p>El estudio español The Game Kitchen regresa con una secuela intensa, mística y visualmente deslumbrante.</p>
-                <a href="reseñas.html?id=11" class="btn">Ver más</a>
-            </article>
-
-            <article class="card">
-                <img src="img/juego6.png" alt="Hades">
-                <h3>Hades</h3>
-                <p>Un clásico moderno que sigue brillando por su acción impecable y narrativa envolvente.</p>
-                <a href="reseñas.html?id=6" class="btn">Ver más</a>
-            </article>
-
-            <article class="card">
-                <img src="img/juego5.png" alt="Celeste">
-                <h3>Celeste</h3>
-                <p>Una aventura desafiante y emocional que sigue inspirando a jugadores de todo el mundo.</p>
-                <a href="reseñas.html?id=5" class="btn">Ver más</a>
-            </article>
-        </div>
-    </section>
-
-    <section class="explorar">
-        <h2>🎮 Explora el universo indie</h2>
-        <p>Desde emocionantes aventuras pixeladas hasta experiencias narrativas únicas,  
-        el mundo indie no deja de crecer. ¡Descubre tus próximos juegos favoritos!</p>
-        <a href="reseñas.html" class="btn">Explorar reseñas</a>
-    </section>
-
-    <footer>
+    <footer role="contentinfo">
         <p>© 2025 IndiePlay | Mikel Martín</p>
         <p>
             <a href="https://www.ionos.es/digitalguide/paginas-web/derecho-digital/aviso-legal-obligatorio-todo-lo-que-necesitas-saber/">Aviso legal</a> | 
             <a href="https://cookiefirst.com/es/que-es-la-legislacion-de-rgpd/?gad_source=1&gad_campaignid=23142789728&gbraid=0AAAAACv37T_mypFWeU0teodmfrZsIvA9S&gclid=Cj0KCQjw35bIBhDqARIsAGjd-cZ30rUeiCGcNgQhsKEfaoWLjCph1IJQPbptQhpgUl5q5aoL2mHSg38aAhoGEALw_wcB">Privacidad</a> | 
             <a href="https://policies.google.com/technologies/cookies?hl=es">Cookies</a>
         </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

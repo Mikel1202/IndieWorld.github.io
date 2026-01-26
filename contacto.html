@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Mikel">
-  <meta name="description" content="Contacto">
+  <meta name="description" content="Contacto - Envía tus sugerencias y reseñas a IndiePlay">
   <title>IndiePlay | Contacto</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/contactostyle.css">
@@ -12,60 +12,70 @@
 </head>
 
 <body>
-  <header class="navbar navbar-expand-lg navbar-dark">
+  <header class="navbar navbar-expand-lg navbar-dark" role="banner">
     <div class="container-fluid">
-      <div class="navbar-brand">🎮 IndiePlay</div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="navbar-brand" aria-label="IndiePlay - Inicio">🎮 IndiePlay</div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <nav class="collapse navbar-collapse" id="navbarNav">
+      <nav class="collapse navbar-collapse" id="navbarNav" aria-label="Navegación principal">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="reseñas.html">Reseñas</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contacto.html" aria-current="page">Contacto</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="contacto">
-      <h1>📫 Contáctanos</h1>
+  <main role="main">
+    <section class="contacto" aria-labelledby="contacto-title">
+      <h1 id="contacto-title">📫 Contáctanos</h1>
       <p>¿Tienes alguna sugerencia, reseña o propuesta de colaboración?  
       Envíanos tu mensaje y te responderemos lo antes posible.</p>
 
-      <form class="form-contacto" action="#" method="post">
+      <form class="form-contacto" action="#" method="post" aria-label="Formulario de contacto" aria-describedby="form-description">
+        <p id="form-description" class="visually-hidden">Rellena este formulario con tu nombre, correo electrónico y mensaje para ponerte en contacto con nosotros.</p>
+        
         <div>
           <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required 
+                 aria-required="true" aria-label="Campo de nombre - requerido">
         </div>
 
         <div>
           <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" placeholder="tuemail@example.com" required>
+          <input type="email" id="email" name="email" placeholder="tuemail@example.com" required 
+                 aria-required="true" aria-label="Campo de correo electrónico - requerido">
         </div>
 
         <div>
           <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required 
+                    aria-required="true" aria-label="Campo de mensaje - requerido"></textarea>
         </div>
 
-        <button type="submit" class="btn">Enviar mensaje</button>
+        <button type="submit" class="btn" aria-label="Enviar el formulario de contacto">Enviar mensaje</button>
       </form>
     </section>
 
-    <section class="redes">
-      <h2>🌐 Síguenos</h2>
-      <div class="links">
-        <a href="https://x.com/home" target="_blank">🐦 X</a>
-        <a href="https://www.instagram.com/" target="_blank">📸 Instagram</a>
-        <a href="https://www.youtube.com/" target="_blank">🎥 YouTube</a>
-        <a href="https://discord.com/" target="_blank">💬 Discord</a>
-      </div>
+    <section class="redes" aria-labelledby="redes-title">
+      <h2 id="redes-title">🌐 Síguenos</h2>
+      <p aria-label="Enlaces a redes sociales de IndiePlay">
+        <a href="https://x.com/home" target="_blank" rel="noopener noreferrer" 
+           aria-label="Síguenos en X (abre en nueva ventana)">🐦 X</a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" 
+           aria-label="Síguenos en Instagram (abre en nueva ventana)">📸 Instagram</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" 
+           aria-label="Síguenos en YouTube (abre en nueva ventana)">🎥 YouTube</a>
+        <a href="https://discord.com/" target="_blank" rel="noopener noreferrer" 
+           aria-label="Únete a nuestro Discord (abre en nueva ventana)">💬 Discord</a>
+      </p>
     </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <p>© 2025 IndiePlay | Mikel Martín</p>
     <p>
       <a href="https://www.ionos.es/digitalguide/paginas-web/derecho-digital/aviso-legal-obligatorio-todo-lo-que-necesitas-saber/">Aviso legal</a> | 

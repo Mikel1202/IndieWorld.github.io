@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Mikel">
-  <meta name="description" content="Reseñas">
+  <meta name="description" content="Galería de reseñas de videojuegos independientes">
   <title>IndiePlay | Reseñas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/reseñasstyle.css">
@@ -12,111 +12,115 @@
 </head>
 
 <body>
-    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <header class="navbar navbar-expand-lg navbar-dark" role="banner">
         <div class="container-fluid">
-            <div class="navbar-brand fw-bold">🎮 IndiePlay</div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="navbar-brand" aria-label="IndiePlay - Inicio">🎮 IndiePlay</div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <nav class="collapse navbar-collapse" id="navbarNav">
+            <nav class="collapse navbar-collapse" id="navbarNav" aria-label="Navegación principal">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="reseñas.html">Reseñas</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="reseñas.html" aria-current="page">Reseñas</a></li>
                     <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="py-5">
-        <div class="container-fluid">
-            <div class="row g-4 galeria">
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="juego" data-id="1" data-audio="silksong.mp3">
-                        <img src="img/juego1.png" alt="Hollow Knight Silksong" class="img-fluid">
-                        <h3>Hollow Knight: Silksong</h3>
+    <main role="main">
+        <section aria-labelledby="galeria-title">
+            <h1 id="galeria-title" class="visually-hidden">Galería de reseñas de videojuegos independientes</h1>
+            <div class="container-fluid py-5">
+                <div class="row g-4 galeria" role="region" aria-label="Grid de juegos reseñados">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="juego" data-id="1" data-audio="silksong.mp3" role="article" aria-label="Hollow Knight Silksong - Haz clic para leer reseña">
+                            <img src="img/juego1.png" alt="Hollow Knight Silksong - Portada del juego">
+                            <h3>Hollow Knight: Silksong</h3>
+                        </article>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="juego" data-id="2" data-audio="hotline.mp3">
-                        <img src="img/juego2.png" alt="Hotline Miami" class="img-fluid">
-                        <h3>Hotline Miami</h3>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="juego" data-id="2" data-audio="hotline.mp3" role="article" aria-label="Hotline Miami - Haz clic para leer reseña">
+                            <img src="img/juego2.png" alt="Hotline Miami - Portada del juego">
+                            <h3>Hotline Miami</h3>
+                        </article>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="juego" data-id="3" data-audio="undertale.mp3">
-                        <img src="img/juego3.png" alt="Undertale" class="img-fluid">
-                        <h3>Undertale</h3>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="juego" data-id="3" data-audio="undertale.mp3" role="article" aria-label="Undertale - Haz clic para leer reseña">
+                            <img src="img/juego3.png" alt="Undertale - Portada del juego">
+                            <h3>Undertale</h3>
+                        </article>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="juego" data-id="4" data-audio="isaac.mp3">
-                        <img src="img/juego4.png" alt="The Binding of Isaac" class="img-fluid">
-                        <h3>The Binding of Isaac</h3>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="juego" data-id="4" data-audio="isaac.mp3" role="article" aria-label="The Binding of Isaac - Haz clic para leer reseña">
+                            <img src="img/juego4.png" alt="The Binding of Isaac - Portada del juego">
+                            <h3>The Binding of Isaac</h3>
+                        </article>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="juego" data-id="5" data-audio="celeste.mp3">
-                        <img src="img/juego5.png" alt="Celeste" class="img-fluid">
-                        <h3>Celeste</h3>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="juego" data-id="5" data-audio="celeste.mp3" role="article" aria-label="Celeste - Haz clic para leer reseña">
+                            <img src="img/juego5.png" alt="Celeste - Portada del juego">
+                            <h3>Celeste</h3>
+                        </article>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="juego" data-id="6" data-audio="hades.mp3">
-                        <img src="img/juego6.png" alt="Hades" class="img-fluid">
-                        <h3>Hades</h3>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="juego" data-id="6" data-audio="hades.mp3" role="article" aria-label="Hades - Haz clic para leer reseña">
+                            <img src="img/juego6.png" alt="Hades - Portada del juego">
+                            <h3>Hades</h3>
+                        </article>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="juego" data-id="7" data-audio="cuphead.mp3">
-                        <img src="img/juego7.png" alt="Cuphead" class="img-fluid">
-                        <h3>Cuphead</h3>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="juego" data-id="7" data-audio="cuphead.mp3" role="article" aria-label="Cuphead - Haz clic para leer reseña">
+                            <img src="img/juego7.png" alt="Cuphead - Portada del juego">
+                            <h3>Cuphead</h3>
+                        </article>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="juego" data-id="8" data-audio="balatro.mp3">
-                        <img src="img/juego8.png" alt="Balatro" class="img-fluid">
-                        <h3>Balatro</h3>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="juego" data-id="8" data-audio="balatro.mp3" role="article" aria-label="Balatro - Haz clic para leer reseña">
+                            <img src="img/juego8.png" alt="Balatro - Portada del juego">
+                            <h3>Balatro</h3>
+                        </article>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="juego" data-id="9" data-audio="stardew.mp3">
-                        <img src="img/juego9.png" alt="Stardew Valley" class="img-fluid">
-                        <h3>Stardew Valley</h3>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="juego" data-id="9" data-audio="stardew.mp3" role="article" aria-label="Stardew Valley - Haz clic para leer reseña">
+                            <img src="img/juego9.png" alt="Stardew Valley - Portada del juego">
+                            <h3>Stardew Valley</h3>
+                        </article>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="juego" data-id="10" data-audio="doki.mp3">
-                        <img src="img/juego10.png" alt="Doki Doki Literature Club" class="img-fluid">
-                        <h3>Doki Doki Literature Club</h3>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="juego" data-id="10" data-audio="doki.mp3" role="article" aria-label="Doki Doki Literature Club - Haz clic para leer reseña">
+                            <img src="img/juego10.png" alt="Doki Doki Literature Club - Portada del juego">
+                            <h3>Doki Doki Literature Club</h3>
+                        </article>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="juego" data-id="11" data-audio="blasphemous.mp3">
-                        <img src="img/juego11.png" alt="Blasphemous 2" class="img-fluid">
-                        <h3>Blasphemous 2</h3>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="juego" data-id="11" data-audio="blasphemous.mp3" role="article" aria-label="Blasphemous 2 - Haz clic para leer reseña">
+                            <img src="img/juego11.png" alt="Blasphemous 2 - Portada del juego">
+                            <h3>Blasphemous 2</h3>
+                        </article>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="juego" data-id="12" data-audio="omori.mp3">
-                        <img src="img/juego12.png" alt="Omori" class="img-fluid">
-                        <h3>Omori</h3>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <article class="juego" data-id="12" data-audio="omori.mp3" role="article" aria-label="Omori - Haz clic para leer reseña">
+                            <img src="img/juego12.png" alt="Omori - Portada del juego">
+                            <h3>Omori</h3>
+                        </article>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <div id="modal" class="modal fade" tabindex="-1" aria-labelledby="titulo" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+    <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title" id="titulo"></h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar modal"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" role="region" aria-live="polite" aria-label="Contenido de la reseña">
                     <p id="info"></p>
-                    <ul id="resenas"></ul>
+                    <ul id="resenas" role="list" aria-label="Lista de opiniones sobre el juego"></ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -125,17 +129,15 @@
         </div>
     </div>
 
-    <audio id="audio" loop></audio>
+    <audio id="audio" loop aria-label="Música de fondo del juego"></audio>
 
-    <footer class="bg-dark text-white text-center py-4 mt-5">
-        <div class="container-fluid">
-            <p class="mb-2">© 2025 IndiePlay | Mikel Martín</p>
-            <p>
-                <a href="https://www.ionos.es/digitalguide/paginas-web/derecho-digital/aviso-legal-obligatorio-todo-lo-que-necesitas-saber/" class="text-white-50">Aviso legal</a> | 
-                <a href="https://cookiefirst.com/es/que-es-la-legislacion-de-rgpd/?gad_source=1&gad_campaignid=23142789728&gbraid=0AAAAACv37T_mypFWeU0teodmfrZsIvA9S&gclid=Cj0KCQjw35bIBhDqARIsAGjd-cZ30rUeiCGcNgQhsKEfaoWLjCph1IJQPbptQhpgUl5q5aoL2mHSg38aAhoGEALw_wcB" class="text-white-50">Privacidad</a> | 
-                <a href="https://policies.google.com/technologies/cookies?hl=es" class="text-white-50">Cookies</a>
-            </p>
-        </div>
+    <footer role="contentinfo">
+        <p>© 2025 IndiePlay | Mikel Martín</p>
+        <p>
+            <a href="https://www.ionos.es/digitalguide/paginas-web/derecho-digital/aviso-legal-obligatorio-todo-lo-que-necesitas-saber/">Aviso legal</a> | 
+            <a href="https://cookiefirst.com/es/que-es-la-legislacion-de-rgpd/?gad_source=1&gad_campaignid=23142789728&gbraid=0AAAAACv37T_mypFWeU0teodmfrZsIvA9S&gclid=Cj0KCQjw35bIBhDqARIsAGjd-cZ30rUeiCGcNgQhsKEfaoWLjCph1IJQPbptQhpgUl5q5aoL2mHSg38aAhoGEALw_wcB">Privacidad</a> | 
+            <a href="https://policies.google.com/technologies/cookies?hl=es">Cookies</a>
+        </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
