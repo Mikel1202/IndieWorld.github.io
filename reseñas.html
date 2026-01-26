@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Mikel">
-  <meta name="description" content="Galería de reseñas de videojuegos independientes">
-  <title>IndiePlay | Reseñas</title>
-  <link rel="stylesheet" href="css/reseñasstyle.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mikel">
+    <meta name="description" content="Galería de reseñas de videojuegos independientes">
+    <title>IndiePlay | Reseñas</title>
+    <link rel="stylesheet" href="css/reseñasstyle.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script>
+        (function() {
+            const bgColor = localStorage.getItem('indieplay-tema-bg') || '#0e0e12';
+            const textColor = localStorage.getItem('indieplay-tema-text') || '#f1f1f1';
+            document.documentElement.style.setProperty('--bg-color', bgColor);
+            document.documentElement.style.setProperty('--text-color', textColor);
+        })();
+    </script>
 </head>
 
 <body>
@@ -19,6 +27,9 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="reseñas.html" class="active" aria-current="page">Reseñas</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
+                    <li class="nav-item">
+                        <a href="temas.html">Cambiar color de la pagina</a>
+                    </li>
                 </ul>
             </nav>
         </div>
