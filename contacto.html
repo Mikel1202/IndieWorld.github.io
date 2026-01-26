@@ -6,20 +6,26 @@
   <meta name="author" content="Mikel">
   <meta name="description" content="Contacto">
   <title>IndiePlay | Contacto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/contactostyle.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-  <header>
-    <div class="logo">🎮 IndiePlay</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="reseñas.html">Reseñas</a></li>
-        <li><a href="contacto.html" class="activo">Contacto</a></li>
-      </ul>
-    </nav>
+  <header class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <div class="navbar-brand">🎮 IndiePlay</div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="reseñas.html">Reseñas</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -29,14 +35,20 @@
       Envíanos tu mensaje y te responderemos lo antes posible.</p>
 
       <form class="form-contacto" action="#" method="post">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        <div>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
 
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" placeholder="tuemail@example.com" required>
+        <div>
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tuemail@example.com" required>
+        </div>
 
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        <div>
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        </div>
 
         <button type="submit" class="btn">Enviar mensaje</button>
       </form>
@@ -54,12 +66,14 @@
   </main>
 
   <footer>
-        <p>© 2025 IndiePlay | Mikel Martín</p>
-        <p>
-            <a href="https://www.ionos.es/digitalguide/paginas-web/derecho-digital/aviso-legal-obligatorio-todo-lo-que-necesitas-saber/">Aviso legal</a> | 
-            <a href="https://cookiefirst.com/es/que-es-la-legislacion-de-rgpd/?gad_source=1&gad_campaignid=23142789728&gbraid=0AAAAACv37T_mypFWeU0teodmfrZsIvA9S&gclid=Cj0KCQjw35bIBhDqARIsAGjd-cZ30rUeiCGcNgQhsKEfaoWLjCph1IJQPbptQhpgUl5q5aoL2mHSg38aAhoGEALw_wcB">Privacidad</a> | 
-            <a href="https://policies.google.com/technologies/cookies?hl=es">Cookies</a>
-        </p>
-    </footer>
+    <p>© 2025 IndiePlay | Mikel Martín</p>
+    <p>
+      <a href="https://www.ionos.es/digitalguide/paginas-web/derecho-digital/aviso-legal-obligatorio-todo-lo-que-necesitas-saber/">Aviso legal</a> | 
+      <a href="https://cookiefirst.com/es/que-es-la-legislacion-de-rgpd/?gad_source=1&gad_campaignid=23142789728&gbraid=0AAAAACv37T_mypFWeU0teodmfrZsIvA9S&gclid=Cj0KCQjw35bIBhDqARIsAGjd-cZ30rUeiCGcNgQhsKEfaoWLjCph1IJQPbptQhpgUl5q5aoL2mHSg38aAhoGEALw_wcB">Privacidad</a> | 
+      <a href="https://policies.google.com/technologies/cookies?hl=es">Cookies</a>
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
