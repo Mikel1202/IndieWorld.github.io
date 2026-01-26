@@ -37,60 +37,71 @@ const juegos={
           resenas: ["⭐⭐⭐⭐⭐ “Una aventura psicológica que combina ternura, trauma y surrealismo. Hermoso y devastador a partes iguales”", "⭐⭐⭐⭐⭐ “Omori no se olvida. Su historia te rompe en silencio, y cuando termina, deja un eco que no se apaga”"] }
 };
 
+const modal = document.getElementById("modal");
 const titulo = document.getElementById("titulo");
 const info = document.getElementById("info");
 const resenas = document.getElementById("resenas");
+const cerrar = document.getElementById("cerrar");
 const audio = document.getElementById("audio");
 let currentAudio = null;
-let modalBootstrap = null;
 
+function abrirModal(id) {
+     const juego = document.querySelector(`.juego[data-id="${id}"]`);
+     const musica = "audio/" + juego.dataset.audio;
+
+     titulo.textContent = juegos[id].titulo;
+     info.textContent = juegos[id].info;
+     resenas.innerHTML = juegos[id].resenas.map(r => `<li>${r}</li>`).join("");
+
+     // Abrir modal usando classList
+     modal.classList.add("show");
+     modal.setAttribute("aria-hidden", "false");
+
+     if (currentAudio) { 
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+     }
+     audio.src = musica;
+     currentAudio = audio;
+     audio.volume = 0.6;
+     audio.play().catch(() => {});
+}
+
+function cerrarModal() {
+     modal.classList.remove("show");
+     modal.setAttribute("aria-hidden", "true");
+     audio.pause();
+     audio.currentTime = 0;
+}
+
+// Event listeners
+document.querySelectorAll(".juego").forEach(juego => {
+     juego.addEventListener("click", () => {
+          abrirModal(juego.dataset.id);
+     });
+});
+
+cerrar.addEventListener("click", cerrarModal);
+
+// Cerrar al hacer clic en el overlay
+const modalOverlay = document.querySelector(".modal-overlay");
+modalOverlay.addEventListener("click", cerrarModal);
+
+// Cerrar con ESC
+document.addEventListener("keydown", (e) => {
+     if (e.key === "Escape" && modal.classList.contains("show")) {
+          cerrarModal();
+     }
+});
+
+// URL parameter
 document.addEventListener("DOMContentLoaded", () => {
-     const modalElement = document.getElementById("modal");
-     modalBootstrap = new bootstrap.Modal(modalElement, {
-          backdrop: true,
-          keyboard: true
-     });
-     
-     modalElement.addEventListener("hidden.bs.modal", () => {
-          if (currentAudio) {
-               currentAudio.pause();
-               currentAudio.currentTime = 0;
-          }
-     });
-
-     document.querySelectorAll(".juego").forEach(juego => {
-          juego.addEventListener("click", () => {
-               const id = juego.dataset.id;
-               const musica = "audio/" + juego.dataset.audio;
-
-               titulo.textContent = juegos[id].titulo;
-               info.textContent = juegos[id].info;
-               resenas.innerHTML = juegos[id].resenas.map(r => `<li>${r}</li>`).join("");
-
-               modalBootstrap.show();
-
-               if (currentAudio) { 
-                    currentAudio.pause();
-                    currentAudio.currentTime = 0;
-               }
-               audio.src = musica;
-               currentAudio = audio;
-               audio.volume = 0.6;
-               audio.play().catch(() => {});
-          });
-     });
-
      const params = new URLSearchParams(window.location.search);
      const id = params.get("id");
 
      if (id && juegos[id]) {
           setTimeout(() => {
-               const juego = document.querySelector(`.juego[data-id="${id}"]`);
-               if (juego) {
-                    juego.click();
-               } else {
-                    console.warn("No se encontró el juego con id:", id);
-               }
+               abrirModal(id);
           }, 300);
      }
 });

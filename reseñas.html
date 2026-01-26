@@ -6,24 +6,19 @@
   <meta name="author" content="Mikel">
   <meta name="description" content="Galería de reseñas de videojuegos independientes">
   <title>IndiePlay | Reseñas</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/reseñasstyle.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <header class="navbar navbar-expand-lg navbar-dark" role="banner">
+    <header role="banner">
         <div class="container-fluid">
-            <div class="navbar-brand" aria-label="IndiePlay - Inicio">🎮 IndiePlay</div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <nav class="collapse navbar-collapse" id="navbarNav" aria-label="Navegación principal">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="reseñas.html" aria-current="page">Reseñas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            <div class="logo" aria-label="IndiePlay - Inicio">🎮 IndiePlay</div>
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="reseñas.html" class="active" aria-current="page">Reseñas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -111,20 +106,17 @@
         </section>
     </main>
 
-    <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="modalTitle"></h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar modal"></button>
-                </div>
-                <div class="modal-body" role="region" aria-live="polite" aria-label="Contenido de la reseña">
-                    <p id="info"></p>
-                    <ul id="resenas" role="list" aria-label="Lista de opiniones sobre el juego"></ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                </div>
+    <!-- Modal personalizado SIN Bootstrap -->
+    <div id="modal" class="modal-custom" role="dialog" aria-labelledby="titulo" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-custom-content">
+            <div class="modal-custom-header">
+                <h2 id="titulo"></h2>
+                <button id="cerrar" class="modal-custom-close" aria-label="Cerrar modal">✖</button>
+            </div>
+            <div class="modal-custom-body">
+                <p id="info"></p>
+                <ul id="resenas" role="list" aria-label="Lista de opiniones sobre el juego"></ul>
             </div>
         </div>
     </div>
@@ -140,7 +132,6 @@
         </p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/reseñas.js"></script>
 </body>
 </html>

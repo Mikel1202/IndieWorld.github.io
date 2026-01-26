@@ -17,14 +17,37 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #1b1b22;
+    padding: 16px 32px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
 }
 
 .logo {
     font-size: 25.6px;
     font-weight: bold;
     color: #6b5bff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
@@ -83,59 +106,91 @@ main {
     color: #f1f1f1;
 }
 
-/* Estilos para el modal de Bootstrap */
-.modal-content {
-    background: #1b1b22;
-    color: #f1f1f1;
-    border: none;
+/* Modal personalizado */
+.modal-custom {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
 }
 
-.modal-header {
-    background: #1b1b22;
-    border-bottom: 1px solid #333;
+.modal-custom.show {
+    display: flex;
 }
 
-.modal-header .btn-close {
-    filter: invert(1);
+.modal-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(3px) !important;
+    cursor: pointer !important;
 }
 
-.modal-title {
-    color: #6b5bff;
-    font-size: 20.8px;
+.modal-custom-content {
+    position: relative !important;
+    background: #1b1b22 !important;
+    border-radius: 12px !important;
+    padding: 32px !important;
+    max-width: 600px !important;
+    width: 90% !important;
+    color: #f1f1f1 !important;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6) !important;
+    z-index: 10000 !important;
 }
 
-.modal-body {
-    color: #aaa;
-    padding: 24px;
+.modal-custom-header {
+    position: relative !important;
+    margin-bottom: 16px !important;
 }
 
-.modal-body p {
-    margin-bottom: 16px;
-    color: #aaa;
+.modal-custom-header h2 {
+    color: #6b5bff !important;
+    margin: 0 !important;
+    font-size: 20.8px !important;
 }
 
-.modal-body ul {
-    list-style: none;
+.modal-custom-close {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    background: none !important;
+    border: none !important;
+    color: #ff4df0 !important;
+    font-size: 24px !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    transition: color 0.3s !important;
 }
 
-.modal-body li {
-    margin-bottom: 12px;
-    color: #f1f1f1;
+.modal-custom-close:hover {
+    color: #6b5bff !important;
 }
 
-.modal-footer {
-    background: #1b1b22;
-    border-top: 1px solid #333;
+.modal-custom-body {
+    color: #aaa !important;
 }
 
-.modal-footer .btn-secondary {
-    background-color: #6b5bff;
-    border-color: #6b5bff;
+.modal-custom-body p {
+    margin-bottom: 16px !important;
+    color: #aaa !important;
 }
 
-.modal-footer .btn-secondary:hover {
-    background-color: #ff4df0;
-    border-color: #ff4df0;
+.modal-custom-body ul {
+    list-style: none !important;
+    padding: 0 !important;
+}
+
+.modal-custom-body li {
+    margin-bottom: 12px !important;
+    color: #f1f1f1 !important;
 }
 
 audio {
@@ -167,6 +222,18 @@ footer a:hover {
 }
 
 @media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 16px;
+        padding: 12px 16px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
     .galeria { 
         grid-template-columns: 1fr; 
     }
@@ -180,13 +247,13 @@ footer a:hover {
         display: none;
     }
 
-    .modal-content { 
+    .modal-custom-content { 
         width: 95%;
     }
 }
 
 @media print {
-    header, nav, .modal, audio {
+    header, nav, .modal-custom, audio {
         display: none !important;
     }
 
@@ -224,7 +291,7 @@ footer a:hover {
         font-size: 14pt !important;
     }
 
-    .modal-content {
+    .modal-custom-content {
         background: none !important;
         box-shadow: none !important;
         color: #000 !important;
@@ -232,12 +299,12 @@ footer a:hover {
         width: auto !important;
     }
 
-    .modal-content h2 {
+    .modal-custom-header h2 {
         color: #000 !important;
         margin-bottom: 8px !important;
     }
 
-    .modal-content p, .modal-content li {
+    .modal-custom-body p, .modal-custom-body li {
         color: #000 !important;
         margin-bottom: 8px !important;
     }
