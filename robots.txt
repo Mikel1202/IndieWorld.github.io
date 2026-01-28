@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mikel1202.github.io/IndieWorld.github.io/sitemap.xml
